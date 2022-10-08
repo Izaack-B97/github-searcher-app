@@ -8,11 +8,9 @@ import { GithubSearcherApp } from './GithubSearcherApp';
 import './styles.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <GithubSearcherApp />
-    </BrowserRouter>
-  </React.StrictMode>
+root.render( 
+  <BrowserRouter>
+    <GithubSearcherApp />
+  </BrowserRouter>
 );
 

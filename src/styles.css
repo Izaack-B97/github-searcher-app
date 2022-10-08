@@ -1,34 +1,25 @@
 body {
   padding-top: 2.5em;
-  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; */
 }
 
-/* .custom_card {
-  width: 200px;
-  height: 250px;
-  background: lightgray;
-  border-radius: 5px;;
+.main-container {
+  /* background: red; */
+  padding: 2em;
+  border-radius: 8px;
 }
 
-@media only screen and (max-width: 1399px) {
-  .custom_card {
-    width: 12rem;
-  }
+.loading-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading-img {
+  width: 40px;
 }
 
 
-@media only screen and (max-width: 1200px) {
-  body {
-    background: red;
-  }
-
-  .custom_card {
-    width: 10rem;
-    background-color: blue;
-  }
-} */
-
+.img-avatar {
+  width: 60px;
+  border-radius: 50%;
+}

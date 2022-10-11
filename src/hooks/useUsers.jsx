@@ -6,6 +6,7 @@ export const useUsers = () => {
     const [ isLoading, setIsLoading ] = useState( true );
 
     const loadUsers = async ( name = '', limit = 10 ) => {
+        // console.log({ name });
         try {
             
             setIsLoading( true )
@@ -19,12 +20,6 @@ export const useUsers = () => {
             console.log( err );
         }
     };
-
-    // First try to get the users
-    // useEffect(() => {
-    //     loadUsers('Izaack-B97')
-    // }, []);
-
 
     return { users, isLoading, loadUsers }
 }

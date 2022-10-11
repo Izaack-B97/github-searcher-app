@@ -1,23 +1,30 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 import PropTypes from 'prop-types';
 
-export const SearcherBarComponent = ({ loadUsers, setUserIsLooking }) => {
+export const SearcherBarComponent = ({ loadResults, setUserIsLooking }) => {
     
+    const [ valueTyped, setValueTyped ] = useState( '' );
+
     const handleOnChange = ( e ) => {
         const { value : valueToSearch } = e.target;
-
-        if ( valueToSearch.length > 0 ) {
-            setUserIsLooking( true );
-
-            setTimeout( () => {
-                loadUsers( valueToSearch )
-                setUserIsLooking( false );
-            }, 1000 );
-        } else {
-            setUserIsLooking( false );
-        }
+        setValueTyped( valueToSearch );
     }
+
+    useEffect(() => {
+        console.log({ valueTyped });
+        let timeout = null;
+        if (  valueTyped !== '' ) {
+            timeout = setTimeout( () => {
+                loadResults( valueTyped )
+                setUserIsLooking( false );
+            }, 500 );
+        }
+
+        return () => {
+            if ( timeout ) clearTimeout( timeout );
+        }
+    }, [ valueTyped ]);
     
     return (
         <div>
@@ -26,6 +33,7 @@ export const SearcherBarComponent = ({ loadUsers, setUserIsLooking }) => {
                 className="form-control" 
                 id="inputSearcher" 
                 placeholder='Search...' 
+                value={ valueTyped }
                 onChange={ handleOnChange }
             />
         </div>
@@ -33,6 +41,6 @@ export const SearcherBarComponent = ({ loadUsers, setUserIsLooking }) => {
 }
 
 SearcherBarComponent.propTypes = {
-    loadUsers: PropTypes.func.isRequired,
+    loadResults: PropTypes.func.isRequired,
     setUserIsLooking: PropTypes.func.isRequired 
 }

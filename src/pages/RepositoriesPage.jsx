@@ -15,7 +15,7 @@ export const RepositoriesPage = () => {
   const { repos, isLoading, loadRepos } = useRepos()
 
   return (
-    <div className='main-container shadow bg-light'>
+    <div className='main-container shadow bg-light animate__animated animate__fadeIn'>
       <h1 className='text-primary'>Github Repositories</h1>
       <div className='row'>
         <div className='col-sm-5'>

@@ -11,8 +11,8 @@ export const useUsers = () => {
             
             setIsLoading( true )
             
-            const { data } = await GithubApi.get( `users?q=${ name }&per_page=${ limit }` );
-            
+            const { data } = await GithubApi.get( `search/users?q=${ name }&per_page=${ limit }` );
+
             setUsers( data.items );
             setIsLoading( false );
 
@@ -21,5 +21,14 @@ export const useUsers = () => {
         }
     };
 
-    return { users, isLoading, loadUsers }
+    const loadUserDetails = async ( username = '' ) => {
+        try {
+            const { data } = await GithubApi.get( `users/${ username }` );
+            return data;
+        } catch ( err ) {
+            console.log( err );
+        }
+    }
+
+    return { users, isLoading, loadUsers, loadUserDetails }
 }

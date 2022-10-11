@@ -53,6 +53,18 @@ body {
   flex-direction: column !important;
 }
 
+.break-word {
+  overflow: hidden;
+   text-overflow: ellipsis;
+   display: -webkit-box;
+   -webkit-line-clamp: 4; /* number of lines to show */
+   -webkit-box-orient: vertical;
+}
+
+.more-details-txt {
+  /* color: black !important; */
+  font-weight: bold;
+}
 
 p.text-capitalize.badge.bg-warning.text-wrap {
   font-size: 20px;

@@ -3,7 +3,7 @@ import { GithubApi } from '../api/GithubApi';
 
 export const useUsers = () => {
     const [ users, setUsers ] = useState( [] );
-    const [ isLoading, setIsLoading ] = useState( true );
+    const [ isLoading, setIsLoading ] = useState( false );
 
     const loadUsers = async ( name = '', limit = 10 ) => {
         // console.log({ name });

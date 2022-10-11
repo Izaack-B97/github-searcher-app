@@ -24,7 +24,7 @@ export const UsersPage = () => {
       <div className='row pt-4'>
         <div className='col-sm-12'> 
           {
-            ( isLoading && userIsLooking )
+            ( isLoading )
                 ? <LoadingComponent />
                 : (
                   users.length > 0

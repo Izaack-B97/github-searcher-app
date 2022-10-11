@@ -25,7 +25,7 @@ export const RepositoriesPage = () => {
       <div className='row pt-4'>
         <div className='col-sm-12'> 
           {
-            ( isLoading && userIsLooking )
+            ( isLoading )
                 ? <LoadingComponent />
                 : (
                   repos.length > 0

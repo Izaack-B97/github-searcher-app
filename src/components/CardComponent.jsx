@@ -31,7 +31,16 @@ export const CardComponent = ({ user = null, repo = null }) => {
                             'Description: ' + repo.description
                             
                         } 
-                    </p>}
+                        </p>
+                    }
+
+                    {
+                        user && <p className="card-text bg-warning text-white rounded p-2 text-wrap break-word" >
+                            <span className='more-details-txt'>More details: </span> 
+                            { JSON.stringify( user ) }
+                        </p>
+                    }
+
                     <a href={ user ? user.html_url : repo.html_url } className="btn btn-primary" target='_blank'>{
                         user ? 'Go to github profile' : 'Go to repository'
                     }</a>

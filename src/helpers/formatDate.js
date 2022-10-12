@@ -2,6 +2,8 @@
 const MONTHS = [ 'January, February, March, April, May, June, July', 'August', 'September', 'October', 'November', 'December'];
 // const DAYS = [ 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday' ];
 
+// This function is just to formate a string in a wished format date
+
 export const formatDate = ( date = '' ) => {
     const splitDate = date.split('-');
     // console.log( splitDate );

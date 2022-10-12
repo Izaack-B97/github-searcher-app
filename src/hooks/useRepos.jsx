@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { GithubApi } from "../api/GithubApi";
 
+// Custom hook to load the repositories
 export const useRepos = () => {
     
     const [ repos, setRepos ] = useState( [] );

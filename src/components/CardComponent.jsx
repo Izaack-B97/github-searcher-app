@@ -3,16 +3,6 @@ import { formatDate } from '../helpers/formatDate';
 
 export const CardComponent = ({ user = null, repo = null }) => {
 
-    // const { login: name, type, html_url, avatar_url } = user;
-
-    // if ( repo ) {
-    //     console.log( repo );
-    // }
-
-    // if ( user ) {
-    //     console.log( user );
-    // }
-
     return (
         <>
             <div className="card shadow mt-2 animate__animated animate__fadeIn">
@@ -22,7 +12,7 @@ export const CardComponent = ({ user = null, repo = null }) => {
                         { user ? user.login : repo.full_name }
                     </h5>
                     <h6 className="card-subtitle mb-2 text-muted"> { user ? 'Type:' + user.type : 'Clone URL: ' + repo.clone_url }</h6>
-                    { repo && <p className="card-text text-primary">
+                    { repo && <p className="card-text text-warning">
                         { 
                             'Created at ' + formatDate( repo.created_at ) + ' - ' +
                             'Forks #' + repo.forks + ' - ' +

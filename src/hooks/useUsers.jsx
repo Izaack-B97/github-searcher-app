@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { GithubApi } from '../api/GithubApi';
 
+// Custom Hook to load the users results
 export const useUsers = () => {
     const [ users, setUsers ] = useState( [] );
     const [ isLoading, setIsLoading ] = useState( false );

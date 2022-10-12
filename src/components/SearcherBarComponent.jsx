@@ -6,6 +6,7 @@ export const SearcherBarComponent = ({ loadResults, setUserIsLooking }) => {
     
     const [ valueTyped, setValueTyped ] = useState( '' );
 
+    // This fucntion to handle the behavior to make request by useEffect changing the state
     const handleOnChange = ( e ) => {
         const { value : valueToSearch } = e.target;
         setValueTyped( valueToSearch );
